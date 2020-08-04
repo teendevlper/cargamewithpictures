@@ -4,6 +4,7 @@ class Form{
         this.inputBox = createInput("username");
         this.playerButton = createButton("Submit");
         this.greet = createElement("h3");
+        this.resetbutton = createButton("reset");
 
     }
 display(){
@@ -13,11 +14,16 @@ display(){
 
     
     this.inputBox.position(200,200);
-
+   this.resetbutton.position(10,10);
     
     this.playerButton.position(displayWidth - 800 ,displayHeight - 250);
 
-  
+  this.resetbutton.mousePressed( () =>{
+      game.updateGameState(0);
+      player.updatePlayerCount(0);
+      var delplayerREF = database.ref("players");
+     delplayerREF.remove();
+  })
     
 
    this.playerButton.mousePressed( () =>{
@@ -30,6 +36,7 @@ display(){
        player.updatePlayerCount(playercount); 
        this.greet.html("Welcome " + player.name);
        this.greet.position(200,200);  
+
     })
    }
 hide(){
@@ -38,5 +45,6 @@ hide(){
     this.greet.hide();
     this.playerButton.hide();
 }
+
 
 }

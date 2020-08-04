@@ -44,6 +44,8 @@ playGame(){
        carset[index].y = displayHeight - allplayers[plr].distance;
         if(plr === "player" + player.index){
            carset[index].shapeColor = "red";
+        rectMode(CENTER);
+           rect(carset[index].x,carset[index].y,70,135)
            camera.position.x = carset[index].x;
            camera.position.y = carset[index].y;
         

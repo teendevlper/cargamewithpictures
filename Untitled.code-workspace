@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "asynchronousBallMovement-master",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "asynchronousBallMovement-master"
+	}
+}
