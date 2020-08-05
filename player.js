@@ -1,6 +1,7 @@
 class Player{
     constructor(){
       this.name = null;
+      this.rank = 0;
       this.index = null;
       this.distance = 0;
     }
@@ -29,5 +30,17 @@ getPlayerCount(){
    allplayerref.on("value", (data)=> {
      allplayers = data.val();
    })
+ }
+ getPos(){
+    var positionREF = database.ref("pos");
+    positionREF.on("value",(data)=>{
+      this.rank = data.val();
+    })
+ }
+ updatePos(rank){
+ var updateposREF = database.ref("/");
+ updateposREF.update({
+   pos : rank
+ })
  }
 }

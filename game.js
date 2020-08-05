@@ -30,6 +30,7 @@ startGame(){
 }
 playGame(){
  form.hide();
+ player.getPos();
  text("Game has started", 200,200);
  imageMode(CENTER);
  image(track,150, -1000 ,displayWidth ,displayHeight * 5);
@@ -67,11 +68,14 @@ playGame(){
   }
 if(player.distance === 4000){
     gamestate = 2;
+    player.rank = player.rank + 1;
+    player.updatePos(player.rank); 
  } 
 }
 endGame(){
     console.log("game over");
  game.updateGameState(2);
+ console.log(player.name, player.rank)
 }
 
 
